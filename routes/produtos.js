@@ -2,17 +2,18 @@ var express = require('express');
 var router = express.Router();
 
 const produtosContoller = require('../controllers/produtosController');
+const nomeMiddleware = require('../middlewares/nomeMiddleware');
 
 /* GET produtos listing. */
-router.get('/', produtosContoller.findAll);
+router.get('/', nomeMiddleware.validateName, produtosContoller.findAll);
 
 /* PUT produtos listing. */
-router.put('/', produtosContoller.update);
+router.put('/', nomeMiddleware.validateName, produtosContoller.update);
 
   /* POST produtos listing. */
-router.post('/', produtosContoller.save);
+router.post('/', nomeMiddleware.validateName, produtosContoller.save);
 
   /* DELETE produtos listing. */
-router.delete('/:id', produtosContoller.remove);
+router.delete('/:id', nomeMiddleware.validateName, produtosContoller.remove);
 
 module.exports = router;
