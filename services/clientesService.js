@@ -7,7 +7,7 @@ const findAll = async () => {
 };
 
 const update = async (clientes) => {
-    const query = 'UPDATE clientes SET nome = ?,sobrenome = ?,email = ?,idade = ?WHERE id = ?';
+    const query = 'UPDATE clientes SET nome = ? ,sobrenome = ?, email = ?, idade = ? WHERE id = ?';
     const isOk = await (await connection).execute(query,
         [clientes.nome, clientes.sobrenome, clientes.email, clientes.idade,
         clientes.id]);

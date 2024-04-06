@@ -2,23 +2,24 @@ const connection = require('../configs/dbConfiguration');
 
 const findAll = async () => {
     const produtos = await (await connection)
-        .execute('SELECT * FROM clientes');
+        .execute('SELECT * FROM produtos');
     return produtos[0];
 };
 
 const update = async (produtos) => {
-    const query = 'UPDATE produtos SET nome = ?, sobrenome = ?, email = ?, idade = ? WHERE id = ?';
+    id, nome, descricao, preco, data_atualizado
+    const query = 'UPDATE produtos SET nome = ?, descricao = ?, preco = ?, data_atualizado = ? WHERE id = ?';
     const isOk = await (await connection).execute(query,
-        [produtos.nome, produtos.sobrenome, produtos.email, produtos.idade,
+        [produtos.nome, produtos.descricao, produtos.preco, produtos.data_atualizado,
         produtos.id]);
     return isOk[0].affectedRows === 1;
 };
 
 const save = async (produtos) => {
-    const query = 'INSERT INTO produtos(nome, sobrenome, email, idade) VALUES (?, ?, ?, ?)';
+    const query = 'INSERT INTO produtos(nome, descricao, preco, data_atualizado) VALUES (?, ?, ?, ?)';
     const isOk = await (await connection).execute(query,
-        [produtos.nome, produtos.sobrenome, produtos.email,
-        produtos.idade]);
+        [produtos.nome, produtos.descricao, produtos.preco,
+        produtos.data_atualizado]);
     return isOk[0].affectedRows === 1;
 };
 

@@ -2,20 +2,18 @@ const express = require('express');
 const router = express.Router();
 
 const clientesContoller = require('../controllers/clientesController');
-const nomeMiddleware = require('../middlewares/nomeMiddleware');
-const sobrenomeMiddleware = require('../middlewares/sobrenomeMiddleware');
-const idadeMiddleware = require('../middlewares/idadeMiddleware');
+const clientesMiddleware = require('../middlewares/clientesMiddleware');
 
 /* GET clientes listing. */
-router.get('/', nomeMiddleware.validateName, sobrenomeMiddleware.validateFamilyName, idadeMiddleware.validateAge, clientesContoller.findAll);
+router.get('/', clientesMiddleware.validarCamposClientes, clientesContoller.findAll);
 
 /* PUT clientes listing. */
-router.put('/', nomeMiddleware.validateName, sobrenomeMiddleware.validateFamilyName, idadeMiddleware.validateAge, clientesContoller.update);
+router.put('/', clientesContoller.update);
 
 /* POST clientes listing. */
-router.post('/', nomeMiddleware.validateName, sobrenomeMiddleware.validateFamilyName, idadeMiddleware.validateAge, clientesContoller.save);
+router.post('/', clientesContoller.save);
 
 /* DELETE clientes listing. */
-router.delete('/:id', nomeMiddleware.validateName, sobrenomeMiddleware.validateFamilyName, idadeMiddleware.validateAge, clientesContoller.remove);
+router.delete('/:id', clientesContoller.remove);
 
 module.exports = router;

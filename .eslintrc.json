@@ -18,9 +18,11 @@
         "react"
     ],
     "rules": {
-        /*"linebreak-style": ["error", "unix"]*/
         "linebreak-style": [
-            "erro"
-        ]
+            "error",
+            "windows"
+        ],
+        "new-cap": 0,
+        "max-len": 0
     }
 }
