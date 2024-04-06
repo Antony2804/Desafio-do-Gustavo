@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 const produtosContoller = require('../controllers/produtosController');
-const produtosMiddleware = require('../middlewares/produtosMiddlewares');
+const produtosMiddleware = require('../middlewares/produtosMiddleware');
 /* GET produtos listing. */
 router.get('/', produtosContoller.findAll);
+
 /* PUT produtos listing. */
 router.put('/', produtosContoller.update);
 
