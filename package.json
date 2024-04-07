@@ -18,9 +18,9 @@
   "author": "Antonio Victor Carvalho",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Guilhermenast/Desafio-do-Gustavo/issues"
+    "url": "https://github.com/Antony2804/Desafio-do-Gustavo/issues"
   },
-  "homepage": "https://github.com/Guilhermenast/Desafio-do-Gustavo#readme",
+  "homepage": "https://github.com/Antony2804/Desafio-do-Gustavo#readme",
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
