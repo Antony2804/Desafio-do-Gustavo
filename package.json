@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Guilhermenast/Desafio-Servidor-Express-MySQL.git"
+    "url": "git+https://github.com/Antony2804/Desafio-do-Gustavo.git"
   },
   "author": "Antonio Victor Carvalho",
   "license": "MIT",
@@ -29,7 +29,8 @@
     "http-errors": "~1.6.3",
     "jade": "^0.29.0",
     "morgan": "~1.9.1",
-    "mysql2": "^3.9.3"
+    "mysql2": "^3.9.3",
+    "node-cache": "^5.1.2"
   },
   "devDependencies": {
     "eslint": "9.0.0",
