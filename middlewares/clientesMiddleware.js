@@ -12,4 +12,4 @@ function validarCamposCliente(req, res, next) {
     next();
 }
 
-module.exports = { validarCamposCliente };
+module.exports = { validarCamposCliente };  
