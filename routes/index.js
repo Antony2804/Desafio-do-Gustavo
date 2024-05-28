@@ -5,10 +5,10 @@ const mysql = require('mysql2/promise');
 /* GET home page. */
 router.get('/', function (req, res, next) {
     mysql.createConnection({
-        host: 'localhost', user: 'junin', password: '123antonio',
-        database: 'desafio_do_gustavo', port: 3306,
+        host: 'localhost', user: 'teste', password: 'teste',
+        database: 'caching', port: 3307,
     }).then((connection) => {
-        connection.query('SELECT * FROM clientes;')
+        connection.query('SELECT * FROM produtos;')
             .then((result) => { res.send(result[0]); });
     });
 });

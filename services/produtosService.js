@@ -1,4 +1,4 @@
-const { getData, cache } = require('../configs/cachingconfiguration');
+const { getData, cache } = require('../configs/cacheconfiguration');
 const connection = require('../configs/dbConfiguration');
 
 const findAll = async () => {
